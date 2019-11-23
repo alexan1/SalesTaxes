@@ -4,10 +4,7 @@ namespace SalesTaxes
 {
     [TestClass]
     public class SalesTaxesTests
-    {
-        [TestClass]
-        public class SalexTaxesUnitTest
-        {
+    {        
             [TestMethod]
             public void TestProduct1()
             {
@@ -25,7 +22,7 @@ namespace SalesTaxes
                 };
 
                 var actual = item1.Taxes;
-                decimal expected = 0.00m;
+                var expected = 0.00m;
                 Assert.AreEqual(expected, actual, "Should be zero taxes");
             }
 
@@ -47,7 +44,7 @@ namespace SalesTaxes
                 };
 
                 var actual = item1.Taxes;
-                decimal expected = 1.5m;
+                var expected = 1.5m;
                 Assert.AreEqual(expected, actual, "Wrong taxes");
             }
 
@@ -69,7 +66,7 @@ namespace SalesTaxes
                 };
 
                 var actual = item1.Taxes;
-                decimal expected = 0.50m;
+                var expected = 0.50m;
                 Assert.AreEqual(expected, actual, "Wrong taxes");
             }
 
@@ -91,9 +88,8 @@ namespace SalesTaxes
                 };
 
                 var actual = item1.Taxes;
-                decimal expected = 7.15m;
+                var expected = 7.15m;
                 Assert.AreEqual(expected, actual, "Wrong taxes");
-            }
-        }
+            }        
     }
 }

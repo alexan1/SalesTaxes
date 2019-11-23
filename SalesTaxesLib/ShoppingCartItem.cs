@@ -16,8 +16,22 @@ namespace SalesTaxes
         {
             get
             {
-                return decimal.Ceiling(Item.Price * ((Item.IsExempt ? 0 : TaxRate) + (Item.IsImport ? ImpTaxRate : 0)) * 20) / 20;
+                return decimal.Ceiling(Item.Price * (CalculateTaxRate() + CalculateImportRate()) * 20) / 20;
             }
+        }
+
+        private decimal CalculateTaxRate()
+        {
+            return Item.IsExempt
+                ? 0
+                : TaxRate;
+        }
+
+        private decimal CalculateImportRate()
+        {
+            return Item.IsImport
+                ? ImpTaxRate
+                : 0;
         }
     }
 }

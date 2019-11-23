@@ -16,7 +16,7 @@ namespace SalesTaxes
                     Name = "Book",
                     Price = 12.49m,
                     IsImport = false,
-                    Type = Product.ProductType.book
+                    Type = Product.ProductType.Book
                 };
                 var item1 = new ShoppingCartItem
                 {
@@ -37,7 +37,7 @@ namespace SalesTaxes
                     Name = "music CD",
                     Price = 14.99m,
                     IsImport = false,
-                    Type = Product.ProductType.other
+                    Type = Product.ProductType.Other
                 };
 
                 var item1 = new ShoppingCartItem
@@ -59,7 +59,7 @@ namespace SalesTaxes
                     Name = "imported box of chocolates",
                     Price = 10.00m,
                     IsImport = true,
-                    Type = Product.ProductType.food
+                    Type = Product.ProductType.Food
                 };
 
                 var item1 = new ShoppingCartItem
@@ -81,7 +81,7 @@ namespace SalesTaxes
                     Name = "imported bottle of perfume",
                     Price = 47.50m,
                     IsImport = true,
-                    Type = Product.ProductType.other
+                    Type = Product.ProductType.Other
                 };
 
                 var item1 = new ShoppingCartItem

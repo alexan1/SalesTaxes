@@ -10,10 +10,10 @@ namespace SalesTaxes
     {
         public enum ProductType
         {
-            food = 1,
-            book = 2,
-            medical = 3,
-            other = 4
+            Food = 1,
+            Book = 2,
+            Medical = 3,
+            Other = 4
         };
 
         public string Name { get; set; }
@@ -24,7 +24,7 @@ namespace SalesTaxes
         {
             get
             {
-                return (int)Type < 4;
+                return Type != ProductType.Other;
             }
         }
     }

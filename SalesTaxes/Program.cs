@@ -10,33 +10,45 @@ namespace SalesTaxes
     {
         static void Main(string[] args)
         {
-            List<ShoppingCartItem> itemList = getItemsList();
+            IEnumerable<ShoppingCartItem> itemList = GetItemsList();
 
-            decimal salestaxes = 0.00m;
-            decimal totalprice = 0.00m;
+            var salestaxes = 0.00m;
+            var totalprice = 0.00m;
 
-            foreach (ShoppingCartItem item in itemList)
+            foreach (var item in itemList)
             {
                 salestaxes += item.Taxes * item.Quantity;
                 totalprice += item.Item.Price * item.Quantity;
-                Console.WriteLine(string.Format("{0} {1} : {2}", item.Quantity, item.Item.Name, (item.Item.Price + item.Taxes) * item.Quantity));
+                Console.WriteLine("{0} {1} : {2}", item.Quantity, item.Item.Name, (item.Item.Price + item.Taxes) * item.Quantity);
             }
             totalprice += salestaxes;
-            Console.WriteLine("Sales Taxes : " + salestaxes);
-            Console.WriteLine("Total : " + totalprice);
+            Console.WriteLine("Sales Taxes : {0} ", salestaxes);
+            Console.WriteLine("Total : {0}", totalprice);
             Console.ReadLine();
         }
 
-        private static List<ShoppingCartItem> getItemsList()
+        private static IEnumerable<ShoppingCartItem> GetItemsList()
         {
-            List<ShoppingCartItem> lstItems = new List<ShoppingCartItem>();
-            //input 1
+            return new List<ShoppingCartItem>
 
-            lstItems.Add(new ShoppingCartItem { Item = new Product { Name = "Book", Price = 12.49m, Type = Product.ProductType.book, IsImport = false }, Quantity = 1 });
-            lstItems.Add(new ShoppingCartItem { Item = new Product { Name = "music CD", Price = 14.99m, Type = Product.ProductType.other, IsImport = false }, Quantity = 1 });
-            lstItems.Add(new ShoppingCartItem { Item = new Product { Name = "chocolate bar", Price = 0.85m, Type = Product.ProductType.food, IsImport = false }, Quantity = 1 });
+            {
+                //input 1
 
-            return lstItems;
+                new ShoppingCartItem 
+                { 
+                    Item = new Product { Name = "Book", Price = 12.49m, Type = Product.ProductType.Book, IsImport = false }, 
+                    Quantity = 1 
+                },
+                new ShoppingCartItem {
+                    Item = new Product { Name = "music CD", Price = 14.99m, Type = Product.ProductType.Other, IsImport = false }, 
+                    Quantity = 1 
+                },
+                new ShoppingCartItem { 
+                    Item = new Product { Name = "chocolate bar", Price = 0.85m, Type = Product.ProductType.Food, IsImport = false }, 
+                    Quantity = 1 
+                },
+            };
         }
+            
     }
 }

@@ -91,13 +91,6 @@ namespace SalesTaxes
             var actual = item1.Taxes;
             var expected = 7.15m;
             Assert.AreEqual(expected, actual, "Wrong taxes");
-        }
-
-        [TestMethod]
-        public void TestCart1()
-        {
-            IEnumerable<ShoppingCartItem> itemList = Util.GetItemsList(1);
-
-        }
+        }       
     }
 }

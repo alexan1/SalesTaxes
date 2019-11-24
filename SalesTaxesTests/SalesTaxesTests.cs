@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace SalesTaxes
 {
@@ -95,7 +96,7 @@ namespace SalesTaxes
         [TestMethod]
         public void TestCart1()
         {
-
+            IEnumerable<ShoppingCartItem> itemList = Util.GetItemsList(1);
 
         }
     }
